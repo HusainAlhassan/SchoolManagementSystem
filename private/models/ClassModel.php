@@ -1,9 +1,9 @@
 <?php
 
-class Classes extends Model
+class ClassModel extends Model
 {
     protected $table = "classes";
-    protected $allAllowedColumns = ['classes', 'date'];
+    protected $allAllowedColumns = ['class', 'date'];
     protected $runBeforeInsertIntoTable = [
         'generateUniqueUserId',
         'generateUniqueSchoolId',

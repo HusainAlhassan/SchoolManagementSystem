@@ -28,7 +28,7 @@
                     foreach ($rows as $row): ?>
                         <tr>
                             <th scope="row"><?= $sn ?></th>
-                            <td><?= $row->school ?></td>
+                            <td><?= $row->class ?></td>
                             <td><?= $row->user->first_name . " " . $row->user->last_name ?></td>
                             <td><?= getDateFormat($row->date) ?></td>
                             <td>

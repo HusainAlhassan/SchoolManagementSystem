@@ -6,7 +6,8 @@ class Classes extends Controller
         if (!Auth::isCurrentUserLogIn())
             $this->redirect('login');
 
-        $class = new Classes('Classes');
+        $class = new ClassModel('Classes');
+
         $data = $class->fetchAll();
 
         $breadcrumbs[] = ['Dashboard', '/'];
@@ -25,11 +26,12 @@ class Classes extends Controller
         if (!Auth::isCurrentUserLogIn())
             $this->redirect('login');
 
-        $class = new Classes('Classes');
+        $class = new ClassModel('Classes');
 
         if (count($_POST) > 0) {
             if ($class->validateUserInput($_POST)) {
                 $_POST['date'] = date("Y-m-d H:i:s");
+
                 $class->insert($_POST);
                 $this->redirect('classes');
             } else {
@@ -54,7 +56,7 @@ class Classes extends Controller
         if (!Auth::isCurrentUserLogIn())
             $this->redirect('login');
 
-        $class = new Classes('Classes');
+        $class = new ClassModel('Classes');
 
         if (count($_POST) > 0) {
             if ($class->validateUserInput($_POST)) {
@@ -88,7 +90,7 @@ class Classes extends Controller
         if (!Auth::isCurrentUserLogIn())
             $this->redirect('login');
 
-        $class = new Classes('Classes');
+        $class = new ClassModel('Classes');
 
         if (count($_POST) > 0) {
             $class->delete($id);
