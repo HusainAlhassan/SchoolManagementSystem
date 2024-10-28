@@ -13,7 +13,7 @@
             <input type="search" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
         </div>
     </form>
-    <a href="<?= ROOT ?>signup" class="btn btn-primary float-end">Add User</a>
+    <a href="<?= ROOT ?>signup?mode=students" class="btn btn-primary float-end">Add Student</a>
     <h2>Staff Profile</h2>
 
 
@@ -39,7 +39,7 @@
 
     <?php else: ?>
         <div class="text-center">
-            <h3>No records found for staff</h3>
+            <h3>No records found for students</h3>
         </div>
     <?php endif ?>
 

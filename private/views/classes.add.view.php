@@ -11,7 +11,7 @@
     <div class=" w-25 m-auto justify-content-center align-items-center">
         <form method="POST">
 
-            <h2 c>Add New School</h2>
+            <h2 c>Add New Class</h2>
 
             <?php if (!empty($errors)): ?>
                 <div class="alert alert-warning text-danger alert-dismissible fade show" role="alert">
@@ -23,7 +23,7 @@
                 </div>
             <?php endif ?>
             <div class="mb-2 d-flex">
-                <input type="text" value="<?= isValueSet("school") ?>" class="form-control" name="school" placeholder="School Name" autofocus>
+                <input type="text" value="<?= isValueSet("class") ?>" class="form-control" name="school" placeholder="Class Name" autofocus>
                 <input type="submit" class="btn btn-sm btn-primary " value="Create">
             </div>
         </form>

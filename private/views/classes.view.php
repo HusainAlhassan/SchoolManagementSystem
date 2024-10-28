@@ -9,17 +9,16 @@
     <?php $this->view('includes/breadcrumbs', ['breadcrumbs' => $breadcrumbs]) ?>
 
     <div class="card-group justify-content-center align-items-center">
-        <h2>Schools List</h2>
-        <a href="<?= ROOT ?>schools/add" class="btn-sm btn btn-primary text-light float-end ms-5"><i class="bi bi-plus fs-6"></i> Add New</a>
+        <h2>Class List</h2>
+        <a href="<?= ROOT ?>classes/add" class="btn-sm btn btn-primary text-light float-end ms-5"><i class="bi bi-plus fs-6"></i> Add New class</a>
         <table class="table table-bordered table-responsive table-light table-striped table-hover">
             <thead class=" table-primary">
                 <tr>
                     <th scope="col">Sn</th>
-                    <th scope="col">School</th>
+                    <th scope="col">Class Name</th>
                     <th scope="col">Created By</th>
                     <th scope="col">Date</th>
                     <th scope="col">Actions</th>
-                    <th scope="col">Switch School</th>
 
                 </tr>
             </thead>
@@ -33,12 +32,11 @@
                             <td><?= $row->user->first_name . " " . $row->user->last_name ?></td>
                             <td><?= getDateFormat($row->date) ?></td>
                             <td>
-                                <a href="<?= ROOT ?>schools/school/info/<?= $row->id ?>"><i class="bi bi-eye btn btn-sm btn-primary"></i></a>
-                                <a href="<?= ROOT ?>schools/edit/<?= $row->id ?>"><i class="bi bi-pen btn btn-sm btn-warning"></i></a>
-                                <a href="<?= ROOT ?>schools/delete/<?= $row->id ?>"><i class="bi bi-trash btn btn-sm btn-danger"></i></a>
+                                <a href="<?= ROOT ?>classes/school/info/<?= $row->id ?>"><i class="bi bi-eye btn btn-sm btn-primary"></i></a>
+                                <a href="<?= ROOT ?>classes/edit/<?= $row->id ?>"><i class="bi bi-pen btn btn-sm btn-warning"></i></a>
+                                <a href="<?= ROOT ?>classes/delete/<?= $row->id ?>"><i class="bi bi-trash btn btn-sm btn-danger"></i></a>
 
                             </td>
-                            <td> <a href="<?= ROOT ?>switch_school/<?= $row->id ?>" class="btn btn-sm btn-success">Switch to<i class="bi bi-chevron-right "></i></a></td>
                         </tr>
 
 
@@ -47,10 +45,9 @@
                     <?php $sn++;
                     endforeach ?>
 
-
                 <?php else: ?>
 
-                    <h3>No School was found</h3>
+                    <h3>No Class was found</h3>
 
                 <?php endif ?>
             </tbody>

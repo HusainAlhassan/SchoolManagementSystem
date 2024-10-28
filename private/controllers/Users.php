@@ -11,7 +11,7 @@ class Users extends Controller
         $user = new User();
 
         $schoolId = Auth::getSchool_id();
-        $data = $user->query("SELECT*FROM users WHERE  school_id =:school_id ORDER BY id DESC", ['school_id' => $schoolId]);
+        $data = $user->query("SELECT*FROM users WHERE  school_id =:school_id  && rank NOT IN ('student' ) ORDER BY id DESC", ['school_id' => $schoolId]);
 
         $breadcrumbs[] = ['Dashboard', '/'];
         $breadcrumbs[] = ['Staff', 'users'];
@@ -19,6 +19,7 @@ class Users extends Controller
         $this->view('users', [
             'rows' => $data,
             'breadcrumbs' => $breadcrumbs,
+            'mode' => 'users',
         ]);
     }
 }

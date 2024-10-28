@@ -1,5 +1,16 @@
 <?php
 
+
+function getImage($image, $gender = 'male')
+{
+    if ($gender === 'female') {
+        $image = ASSETS . 'images/user_female.jpg';
+    } else {
+        $image = ASSETS . 'images/user_male.jpg';
+    }
+    return $image;
+}
+
 function isValueSet($key, $defaultValue = '')
 {
     return isset($_POST[$key]) ? $_POST[$key] : $defaultValue;

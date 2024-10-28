@@ -33,18 +33,26 @@
       </select>
     </div>
     <div class="mb-2">
-      <select class="form-select" name="rank">
-        <option <?= isSelectValueSet('rank', '') ?>> select Rank</option>
-        <option <?= isSelectValueSet('rank', 'student') ?> value="student">Student</option>
-        <option <?= isSelectValueSet('rank', 'lecturer') ?> value="lecturer">Lecturer</option>
-        <option <?= isSelectValueSet('rank', 'reception') ?> value="reception">Reception</option>
-        <option <?= isSelectValueSet('rank', 'admin') ?> value="admin">Admin</option>
+      <?php if ($mode === 'students'): ?>
 
-        <?php if (Auth::getRank() === "super_admin"): ?>
-          <option <?= isSelectValueSet('rank', 'super_admin') ?> value="super_admin">Super Admin</option>
-        <?php endif; ?>
+        <input hidden value="student" class="form-control" name="rank" placeholder=" Email">
 
-      </select>
+      <?php else: ?>
+
+        <select class="form-select" name="rank">
+          <option <?= isSelectValueSet('rank', '') ?>> select Rank</option>
+          <option <?= isSelectValueSet('rank', 'student') ?> value="student">Student</option>
+          <option <?= isSelectValueSet('rank', 'lecturer') ?> value="lecturer">Lecturer</option>
+          <option <?= isSelectValueSet('rank', 'reception') ?> value="reception">Reception</option>
+          <option <?= isSelectValueSet('rank', 'admin') ?> value="admin">Admin</option>
+
+          <?php if (Auth::getRank() === "super_admin"): ?>
+            <option <?= isSelectValueSet('rank', 'super_admin') ?> value="super_admin">Super Admin</option>
+          <?php endif; ?>
+
+        </select>
+      <?php endif; ?>
+
     </div>
 
     <div class="mb-2">
@@ -60,7 +68,11 @@
 
     <div class="mb-2 form-group">
       <input type="submit" class=" btn btn-success" value="Sign up">
-      <a href="<?= ROOT ?>users" class="btn btn-danger float-end">Cancel</a>
+      <?php if ($mode === 'students'): ?>
+        <a href="<?= ROOT ?>students" class="btn btn-danger float-end">Cancel</a>
+      <?php else: ?>
+        <a href="<?= ROOT ?>users" class="btn btn-danger float-end">Cancel</a>
+      <?php endif; ?>
     </div>
     <a href="<?= ROOT ?>login">Login</a>
   </form>
