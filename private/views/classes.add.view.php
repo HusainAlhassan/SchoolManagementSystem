@@ -23,7 +23,7 @@
                 </div>
             <?php endif ?>
             <div class="mb-2 d-flex">
-                <input type="text" value="<?= isValueSet("class") ?>" class="form-control" name="school" placeholder="Class Name" autofocus>
+                <input type="text" value="<?= isValueSet("class") ?>" class="form-control" name="class" placeholder="Class Name" autofocus>
                 <input type="submit" class="btn btn-sm btn-primary " value="Create">
             </div>
         </form>

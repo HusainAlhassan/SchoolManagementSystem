@@ -24,7 +24,7 @@
                     </div>
                 <?php endif ?>
                 <div class="mb-2 d-flex">
-                    <input type="text" value="<?= isValueSet("school", $row->school) ?>" class="form-control" name="school" placeholder="School Name" autofocus>
+                    <input type="text" value="<?= isValueSet("class", $row->class) ?>" class="form-control" name="class" placeholder="Class Name" autofocus>
                     <input type="submit" class="btn btn-sm btn-primary " value="Update">
                 </div>
             </form>
