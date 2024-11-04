@@ -50,7 +50,7 @@ class User extends Model
             $this->errors[] = "Enter a valid email address.";
         }
         // Email  is already taken
-        if ($this->where("email", $userData['email'])) {
+        if ($this->where('email', $userData['email'])) {
             $this->errors[] = "The email has been taken already";
         }
 
@@ -111,7 +111,11 @@ class User extends Model
      */
     public function generateUniqueUserId($data)
     {
-        $data['user_id'] = randomStringGenerator(60);
+        // $data['user_id'] = randomStringGenerator(60);
+        $data['user_id'] = strtolower($data['first_name'] . '.' . $data['last_name']);
+        while ($this->where('user_id', $data['user_id'])) {
+            $data['user_id'] .= rand(10, 9999);
+        }
         return $data;
     }
 

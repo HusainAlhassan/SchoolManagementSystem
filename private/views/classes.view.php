@@ -32,7 +32,7 @@
                             <td><?= $row->user->first_name . " " . $row->user->last_name ?></td>
                             <td><?= getDateFormat($row->date) ?></td>
                             <td>
-                                <a href="<?= ROOT ?>classes/school/info/<?= $row->id ?>"><i class="bi bi-eye btn btn-sm btn-primary"></i></a>
+                                <a href="<?= ROOT ?>single_class/<?= $row->class_id ?>"><i class="bi bi-eye btn btn-sm btn-primary"></i></a>
                                 <a href="<?= ROOT ?>classes/edit/<?= $row->id ?>"><i class="bi bi-pen btn btn-sm btn-warning"></i></a>
                                 <a href="<?= ROOT ?>classes/delete/<?= $row->id ?>"><i class="bi bi-trash btn btn-sm btn-danger"></i></a>
 

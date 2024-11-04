@@ -8,6 +8,7 @@ class Classes extends Controller
 
         $class = new ClassModel('Classes');
 
+
         $data = $class->fetchAll();
 
         $breadcrumbs[] = ['Dashboard', '/'];

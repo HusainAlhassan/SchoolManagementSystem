@@ -1,6 +1,29 @@
 <?php
 
 
+function getInitials($text)
+{
+    // List of common prepositions and conjunctions to ignore
+    $ignoreWords = ["and", "or", "but", "for", "nor", "on", "in", "at", "by", "with", "of", "to", "a", "the"];
+
+    // Split the text into words
+    $words = explode(" ", $text);
+    $initials = "";
+
+    // Loop through words and get initials if the word is not in ignoreWords
+    foreach ($words as $word) {
+        if (!in_array(strtolower($word), $ignoreWords)) {
+            $initials .= strtoupper($word[0]);
+        }
+    }
+
+    return $initials;
+}
+
+
+
+
+
 function getImage($image, $gender = 'male')
 {
     if ($gender === 'female') {

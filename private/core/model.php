@@ -155,7 +155,7 @@ class Model extends Database
     public function fetchAll()
     {
         // Construct the SQL SELECT query to fetch all records
-        $query = "SELECT * FROM $this->table";
+        $query = "SELECT * FROM $this->table ORDER BY id DESC";
         // Execute the query and return the result
         $data = $this->query($query);
 
